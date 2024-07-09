@@ -1,0 +1,67 @@
+/* Reset and basic styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container styles for centering content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+/* Contact response section styles */
+.contact-response {
+    width: 90%; /* Adjust width for responsiveness */
+    max-width: 600px;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #a8e7ff, #b5f1ff);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto; /* Center horizontally */
+}
+
+/* Heading styles */
+.contact-response h2 {
+    color: #437eff;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+.contact-response p {
+    margin-bottom: 20px;
+}
+
+/* Link styles */
+.contact-response a {
+    display: inline-block;
+    background-color: #437eff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.contact-response a:hover {
+    background-color: #365bbf;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .contact-response {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .contact-response {
+        width: 80%; /* Adjust width for even smaller screens */
+    }
+}

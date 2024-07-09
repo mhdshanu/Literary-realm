@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="/styles/new.css">
+</head>
+<body>
+    <%- include('partials/header.ejs'); %>
+    
+    <div class="container">
+        <h1>Add Book</h1>
+        <form id="newBookForm" method="post" action="/new">
+            <input type="text" name="title" placeholder="Title" required>
+            <textarea name="description" rows="10" placeholder="Description" required></textarea>
+            <input type="text" name="author" placeholder="Author" required>
+            <input type="text" name="rating" placeholder="Rating" required>
+            <input type="text" name="isbn" value="<%= add %>" placeholder="ISBN" required>
+            <button class="full-width" type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <%- include('partials/footer.ejs'); %>
+</body>
+</html>

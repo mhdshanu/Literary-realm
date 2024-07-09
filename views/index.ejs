@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literary Realm</title>
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+    <%- include('partials/header.ejs'); %>
+    <div class="main-content">
+        <div class="sort-add">
+            <form action="/" method="get">
+                <select name="sort" onchange="this.form.submit()">
+                    <option value="">Sort by</option>
+                    <option value="name">Name</option>
+                    <option value="rating">Rating</option>
+                    <option value="newly_added">Newly Added</option>
+                </select>
+            </form>
+            <form action="/new" method="GET">
+                <button type="submit" name="addBook" value="new">Add a new book</button>
+            </form>
+            <form action="/isbn" method="GET">
+                <button type="submit">Get ISBN</button>
+            </form>
+        </div>
+        <div class="content">
+            <% books.forEach(book => { %>
+            <div class="book">
+                <div class="book-thumbnail">
+                    <img src="<%= book.thumbnail %>" alt="<%= book.title %> Thumbnail">
+                </div>
+                <div class="book-info">
+                    <div class="book-details">
+                        <span class="title"><%= book.title %></span> - by <span class="author"><%= book.author %></span>
+                        <p class="date">Created on: <%= book.date %></p>
+                        <p>How strongly I recommend it: <%= book.rating %>/10</p>
+                    </div>
+                    <div class="book-description">
+                        <p name="description"><%= book.description %></p>
+                    </div>
+                    <div class="book-actions">
+                        <form action="/edit" method="GET">
+                            <input type="hidden" name="isbn" value="<%= book.isbn %>">
+                            <button type="submit">Edit</button>
+                        </form>
+                        <form action="/delete" method="POST">
+                            <input type="hidden" name="isbn" value="<%= book.isbn %>">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs'); %>
+</body>
+</html>

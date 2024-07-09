@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="/styles/edit.css">
+</head>
+<body>
+    <%- include('partials/header.ejs'); %>
+    <div class="container">
+        <h1>Edit Book</h1>
+        <form id="editBookForm" method="post" action="/edit?isbn=<%= post.isbn %>">
+            <input type="text" name="title" value="<%= post.title %>" placeholder="Title" required>
+            <textarea name="description" rows="10" placeholder="Description" required><%= post.description %></textarea>
+            <input type="text" name="author" value="<%= post.author %>" placeholder="Author" required>
+            <input type="text" name="rating" value="<%= post.rating %>" placeholder="Rating" required>
+            <button class="full-width" type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>

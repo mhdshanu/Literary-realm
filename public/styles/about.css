@@ -1,0 +1,77 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styles */
+
+
+/* Main content styles */
+.main {
+    padding: 20px;
+    max-width: 1000px; /* Adjust max-width for larger screens */
+    margin: 0 auto; /* Center align on larger screens */
+    box-sizing: border-box;
+}
+
+/* About section styles */
+.about {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #a8e7ff, #b5f1ff);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+
+.about h2 {
+    color: #437eff;
+}
+
+.about p,
+.about ul {
+    margin-bottom: 20px;
+}
+
+.about ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1024px) {
+    .main {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .about {
+        max-width: 90%; /* Adjust max-width for smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 10px; /* Further adjust padding for smaller screens */
+    }
+
+    .about {
+        max-width: 90%; /* Further adjust max-width for smaller screens */
+        padding: 10px; /* Further adjust padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main {
+        padding: 5px; /* Further decrease padding for very small screens */
+    }
+
+    .about {
+        max-width: 90%; /* Adjust max-width for very small screens */
+        padding: 5px; /* Adjust padding for very small screens */
+    }
+}

@@ -1,0 +1,95 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    background: linear-gradient(to bottom right, #abf5ff, #c1f8ff);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    justify-content: space-between; /* Ensure content fills viewport */
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    /* Add other styles as needed */
+    color:#064108;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto; /* Add margin around the container */
+    padding: 20px;
+    background: linear-gradient(to bottom right, #a8e7ff, #b5f1ff); /* Gradient background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-heading {
+    color: #064108;
+    font-family: "Georgia", serif;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white; /* Ensure inputs have a white background */
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #006064;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #004d52;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    input[type="text"],
+    textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .submit-button {
+        background-color: #3498db; /* Apply edit button color */
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+}

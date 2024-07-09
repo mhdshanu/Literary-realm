@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISBN</title>
+  <link rel="stylesheet" href="/styles/isbn.css">
+</head>
+<body>
+  <%- include('partials/header.ejs'); %>
+  
+  <div class="centered-form-container">
+    <p style="color: red;">Warning: Please note that ISBN information retrieved may occasionally be inaccurate due to various factors. Therefore, we recommend verifying it with other sources if needed. Your understanding and diligence are appreciated.</p>
+
+    <h2>Enter the name of the book</h2>
+    <form action="/isbn" method="POST">
+      <label for="bookTitle">Type in the name of the book:</label><br>
+      <input type="text" id="bookTitle" name="title" placeholder="Enter book title" required><br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <%- include('partials/footer.ejs'); %>
+</body>
+</html>

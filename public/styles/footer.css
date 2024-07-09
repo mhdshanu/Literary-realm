@@ -1,0 +1,35 @@
+/* footer.css */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #006064;
+    color: white;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for tablets and smaller screens */
+    .footer {
+        padding: 8px 0; /* Adjust padding */
+        font-size: 0.9em; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for mobile devices */
+    .footer {
+        padding: 6px 0; /* Further adjust padding */
+        font-size: 0.8em; /* Further adjust font size */
+    }
+}
+
+@media (max-width: 360px) {
+    /* Adjustments for very small devices */
+    .footer {
+        padding: 4px 0; /* Further adjust padding */
+        font-size: 0.7em; /* Further adjust font size */
+    }
+}

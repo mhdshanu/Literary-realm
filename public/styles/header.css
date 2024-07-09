@@ -1,0 +1,123 @@
+/* header.css */
+body {
+    background: linear-gradient(to bottom right, #abf5ff, #c1f8ff);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 10px; /* Increase bottom margin for better spacing */
+    padding-top: 10px; /* Increase top padding for better spacing */
+}
+
+.logo {
+    width: 80px; /* Adjust logo size for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Increase bottom margin for better spacing */
+}
+
+.header h1 {
+    margin-top: 0;
+    font-family: "Georgia", serif; /* Change to a font related to literature */
+    color: #064108;
+    margin-top: 10px; /* Adjust top margin for spacing */
+    margin-bottom: 5px; /* Adjust bottom margin for spacing */
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center align items horizontally */
+    padding: 10px 0;
+    background-color: #006064;
+    color: white;
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 5px; /* Adjust margin for better spacing */
+    padding: 8px 20px; /* Adjust padding for better click area */
+}
+
+/* Media queries for responsiveness */
+
+@media (max-width: 768px) {
+    /* Adjustments for tablets and smaller screens */
+    .header {
+        margin-bottom: 8px; /* Adjust bottom margin */
+        padding-top: 8px; /* Adjust top padding */
+    }
+
+    .logo {
+        width: 60px; /* Adjust logo size for smaller screens */
+        margin-bottom: 8px; /* Adjust bottom margin */
+    }
+
+    .header h1 {
+        font-size: 1.8rem; /* Adjust font size */
+        margin-top: 8px; /* Adjust top margin */
+        margin-bottom: 4px; /* Adjust bottom margin */
+    }
+
+    .navbar {
+        padding: 10px 0; /* Adjust padding */
+        justify-content: space-around; /* Distribute items evenly */
+    }
+
+    .navbar a {
+        flex-basis: 30%; /* Ensure each link occupies full width */
+        margin: 5px 0; /* Adjust margin */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for mobile devices */
+    .header {
+        margin-bottom: 5px; /* Further adjust bottom margin */
+        padding-top: 5px; /* Further adjust top padding */
+    }
+
+    .logo {
+        width: 50px; /* Adjust logo size for smaller screens */
+        margin-bottom: 5px; /* Further adjust bottom margin */
+    }
+
+    .header h1 {
+        font-size: 1.5rem; /* Further adjust font size */
+        margin-top: 5px; /* Further adjust top margin */
+        margin-bottom: 3px; /* Further adjust bottom margin */
+    }
+
+    .navbar a {
+        padding: 8px 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 360px) {
+    /* Adjustments for very small devices */
+    .header {
+        margin-bottom: 3px; /* Further adjust bottom margin */
+        padding-top: 3px; /* Further adjust top padding */
+    }
+
+    .logo {
+        width: 40px; /* Adjust logo size for very small screens */
+        margin-bottom: 3px; /* Further adjust bottom margin */
+    }
+
+    .header h1 {
+        font-size: 1.2rem; /* Further adjust font size */
+        margin-top: 3px; /* Further adjust top margin */
+        margin-bottom: 2px; /* Further adjust bottom margin */
+    }
+
+    .navbar a {
+        padding: 8px 12px; /* Further adjust padding for very small screens */
+    }
+}
