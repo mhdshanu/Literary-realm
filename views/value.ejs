@@ -1,13 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx" class="no-js">
+
 <head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="codepixer">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- Meta character set -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISBN Value</title>
-    <link rel="stylesheet" href="/styles/value.css">
+    <!-- Site Title -->
+    <title>Book Information</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/linearicons.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/magnific-popup.css">
+    <link rel="stylesheet" href="/styles/nice-select.css">
+    <link rel="stylesheet" href="/styles/animate.min.css">
+    <link rel="stylesheet" href="/styles/owl.carousel.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .banner-area {
+            position: relative;
+            background-image: url('/images/new.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .banner-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+        }
+        .banner-content h1 {
+            font-size: 56px; /* Larger font size */
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .banner-content p {
+            font-size: 22px; /* Larger font size */
+            font-weight: 300;
+            max-width: 800px; /* Wider max-width */
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .centered-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .centered-content p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 12px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
+
     <%- include('partials/header.ejs'); %>
+
+    <!-- Start banner Area -->
+    <section class="banner-area" id="home">
+        <div class="banner-content">
+            <h1>ISBN Information</h1>
+        </div>
+    </section>
+    <!-- End banner Area -->
+
+    <!-- Centered Content Section -->
     <div class="centered-content">
         <% if (message.isbn) { %>
             <p>ISBN for "<%= message.title %>" is <%= message.isbn %></p>
@@ -22,6 +139,27 @@
             <p>ISBN information not available for "<%= message.title %>." Please verify with other sources.</p>
         <% } %>
     </div>
+    <!-- End Centered Content Section -->
+
+    <!-- Start footer Area -->
     <%- include('partials/footer.ejs'); %>
+    <!-- End footer Area -->
+
+    <script src="/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script src="/js/easing.min.js"></script>
+    <script src="/js/hoverIntent.js"></script>
+    <script src="/js/superfish.min.js"></script>
+    <script src="/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/parallax.min.js"></script>
+    <script src="/js/mail-script.js"></script>
+    <script src="/js/main.js"></script>
 </body>
+
 </html>

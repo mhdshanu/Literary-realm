@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-    
-    <header class="header">
-        <img class="logo" src="/images/books.png" alt="Logo">
-        <h1>Literary Realm</h1>
-    </header>
-    <nav class="navbar">
-        <div>
-            <a href="/home">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+    <header id="header" id="home">
+        <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a style="text-decoration: none; color: white; font-family: 'Roboto Slab', serif; font-size: 24px; font-weight: 600;">
+                        <img src="/images/open-book.png" alt="Literary Realm Logo" style="vertical-align: middle; margin-right: 10px; width: 45px; height: 45px;" />
+                        <span style="vertical-align: middle;">Literary Realm</span>
+                    </a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li class="menu-active"><a href="/">Home</a></li>
+                        <li><a href="/#about">Explore</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->                
+            </div>
         </div>
-    </nav>
+    </header><!-- #header -->
+</body>
 </html>
+
+
 

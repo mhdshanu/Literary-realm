@@ -1,25 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISBN</title>
-  <link rel="stylesheet" href="/styles/isbn.css">
-</head>
-<body>
-  <%- include('partials/header.ejs'); %>
-  
-  <div class="centered-form-container">
-    <p style="color: red;">Warning: Please note that ISBN information retrieved may occasionally be inaccurate due to various factors. Therefore, we recommend verifying it with other sources if needed. Your understanding and diligence are appreciated.</p>
+<html lang="zxx" class="no-js">
 
-    <h2>Enter the name of the book</h2>
-    <form action="/isbn" method="POST">
-      <label for="bookTitle">Type in the name of the book:</label><br>
-      <input type="text" id="bookTitle" name="title" placeholder="Enter book title" required><br><br>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-  
-  <%- include('partials/footer.ejs'); %>
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="codepixer">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- Meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Book Search</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/linearicons.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/magnific-popup.css">
+    <link rel="stylesheet" href="/styles/nice-select.css">
+    <link rel="stylesheet" href="/styles/animate.min.css">
+    <link rel="stylesheet" href="/styles/owl.carousel.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .banner-area {
+            position: relative;
+            background-image: url('/images/isbn.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 700px; /* Increased height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .banner-area h1 {
+            font-size: 56px; /* Larger font size */
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .banner-area p {
+            font-size: 20px;
+            font-weight: 300;
+            max-width: 800px; /* Wider max-width */
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .centered-form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+            margin: 60px auto; /* Increased margins */
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            text-align: center;
+            background: linear-gradient(to right, #e9ecef, #ffffff);
+        }
+        .centered-form-container p {
+            color: #d9534f;
+            font-size: 18px; /* Larger font size */
+            margin-bottom: 30px;
+        }
+        .centered-form-container h2 {
+            font-size: 28px; /* Larger font size */
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .centered-form-container form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .centered-form-container label {
+            font-size: 18px; /* Larger font size */
+            font-weight: 500;
+            margin-bottom: 12px; /* Increased margin */
+            color: #555;
+        }
+        .centered-form-container input {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-bottom: 25px; /* Increased margin */
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .centered-form-container button {
+            padding: 14px 22px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .centered-form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('partials/header.ejs'); %>
+
+    <!-- start banner Area -->
+    <section class="banner-area" id="home">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div> <!-- Dark overlay -->
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Welcome to the Book Search</h1>
+            <p>Get the ISBN information about any book by entering its title. Ensure the accuracy of the information with additional sources if needed.</p>
+        </div>
+    </section>
+    <!-- end banner Area -->
+
+    <!-- ISBN Form Section -->
+    <div class="centered-form-container">
+        <p>Warning: Please note that ISBN information retrieved may occasionally be inaccurate due to various factors. Therefore, we recommend verifying it with other sources if needed. Your understanding and diligence are appreciated.</p>
+
+        <h2>Enter the name of the book</h2>
+        
+        <form action="/isbn" method="POST">
+            <label for="bookTitle">Type in the name of the book:</label>
+            
+            <input type="text" id="bookTitle" name="title" placeholder="Enter book title" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <!-- End ISBN Form Section -->
+
+    <!-- Start footer Area -->
+    <%- include('partials/footer.ejs'); %>
+    <!-- End footer Area -->
+
+    <script src="/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script src="/js/easing.min.js"></script>
+    <script src="/js/hoverIntent.js"></script>
+    <script src="/js/superfish.min.js"></script>
+    <script src="/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/parallax.min.js"></script>
+    <script src="/js/mail-script.js"></script>
+    <script src="/js/main.js"></script>
 </body>
+
 </html>
